@@ -1,0 +1,23 @@
+{
+  "name": "NavChallenge",
+  "description": "Exercise for interns to complete where they will build a responsive nav driven from json",
+  "version": "3.0.0",
+  "authors": [
+    "Santiago Rodriguez<santiago.rodriguez@endava.com>"
+  ],
+  "license": "© 2019 Endava. All Rights Reserved.",
+  "homepage": "https://github.com/srodriguez20/responsive-nav",
+  "bugs": {
+    "url": "https://github.com/srodriguez20/responsive-nav/issues"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "latest-version": "^3.1.0",
+    "morgan": "~1.0.0"
+  }
+}
