@@ -1,28 +1,70 @@
-/* Styles here! */
-
+body{
+    font-family: Oswald, Arial;
+}
+.mobile-background-menu{
+    display: no
+}
 .navbar{
     background-color: #ff3f10;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    height: 60px;
 }
-
+.navbar .icon button{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.navbar .icon button:focus{
+    border: none;
+}
 .navbar .icon img{
-    max-height: 30px;
+    max-height: 25px;
     padding: 0 20px;
 }
 .navbar .menu-btn{
     display: none;
-    padding: 20px 20px;
+    padding: 20px 0;
 }
 .navbar .logo-endava{
     flex-grow: 1;
 }
 .navbar .logo-endava img{
-    max-height:40px;
+    max-height:35px;
     padding: 0 20px;
 }
+.navbar .search-bar{
+    display: none;
+    width: 40%;
+}
+.navbar .search-bar.visible{
+    display: block;
+    animation-duration: 1s;
+    animation-name: widthSlide;
+}
+
+.navbar .search-bar input{
+    margin: 20px 0;
+    width: 100%;
+    border:none;
+    outline: none;
+    background-color: transparent;
+    color:#fff;
+    border-bottom: 1px solid #fff;
+}
+.navbar .search-bar input::placeholder{
+    color:#fff;
+}
+.navbar .search-btn{
+  
+}
+.navbar .close-menu-btn{
+    display: none;
+}
+
+/*==================== menu list ========================*/
 .navbar .menu-bar{
     flex-grow: 3;
     padding: 0;
@@ -31,71 +73,122 @@
     list-style-type: none;
     overflow: hidden;
 }
-.navbar .search-btn{
-    
-}
-
-.navbar .close-menu-btn{
-    display: none;
-}
-
-
-.navbar ul li a,.navbar .dropbtn {
+.navbar .menu-bar li>a{
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: 700; 
     position: relative;
     display: inline-block;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 20px 25px;
+    padding: 7px 25px;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
 }
-.navbar li a:hover, .navbar .dropdown:hover .dropbtn {
-    background-color: white;
+.navbar .menu-bar li a:hover{
+    background-color: #fff;
     color: #ff3f10;
 }
-.navbar .dropdown-content {
+.navbar .menu-bar li .dropbtn i{
+    display: none;
+}
+.navbar .menu-bar .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     min-width: 230px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+.navbar .menu-bar .dropdown .visible {
+    display: block;
+}
 
-.navbar .dropdown-content a {
+
+.navbar .menu-bar .dropdown-content a {
+    font-size: 17px;
+    line-height: 36px;
+    font-weight: 400;
+    font-style: italic;
     color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
-.navbar .dropdown-content a:hover {
-    background-color: white;
-}
 
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
+.navbar .menu-bar.hidden{
+    display: none;
 }
 
 /*==================== header ========================*/
 header{
-    background-image: url("../images/background-image.jpg");
+    position: relative;
+}
+header .background{
+
+    background-color: #000;
+}
+header img {
     width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+header .title{
+    position: absolute;
+    color: #fff;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+header .title h1{
+    max-width: 60%;
+    font-size: 94px;
+    line-height: 94px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
 }
 /*==================== content========================*/
 .content p{
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px auto;
     max-width: 968px;
-    margin: 0 auto;
 }
-@media (max-width: 400px) { 
+/*==================== On mobile========================*/
+@media (max-width: 930px) {
+    .mobile-background-menu.visible{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+    }
+    .navbar{
+        position: relative;
+    }
     .navbar .menu-btn{
         display: block;
+    }
+    .navbar .menu-btn.hidden{
+        display: none;
     }
     .navbar .logo-endava{
         display: none;
     }
+    .navbar .logo-endava.visible{
+        display: block;
+    }
     .navbar .menu-bar{
         display: none;
+    }
+    .navbar .menu-bar.visible{
+        display: flex;
+        animation-duration: 0.5s;
+        animation-name: widthSlide;
     }
     .navbar .search-btn{
         display: none;
@@ -103,4 +196,81 @@ header{
     .navbar .close-menu-btn{
         display: none;
     }
+    .navbar .close-menu-btn.visible{
+        display: block;
+    }
+    /*==================== menu mobile ========================*/
+    .navbar .menu-bar{
+        width: 80%;
+        position: absolute;
+        top: 100%;
+        z-index: 2;
+        flex-direction: column;
+        background-color: #fff;
+    }
+    .navbar .menu-bar li>a{
+        font-size: 20px;
+        line-height: 40px;
+        color: #000;
+    }
+    .navbar .menu-bar li .dropbtn i{
+        display: inline;
+        color:#ff3f10;
+    }
+    .navbar .menu-bar .dropdown-content {
+        display: none;
+        padding: 0 35px;
+        position: initial;
+        box-shadow: none;
+        z-index: 1;
+    }
+    .navbar .menu-bar .dropdown-content.visible {
+        display: block;
+    }
+    .navbar .menu-bar .dropdown-content a {
+        font-size: 14px;
+        line-height: 28px;
+        font-weight: 400;
+        font-style: italic;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    .navbar .menu-bar.hidden{
+        display: none;
+    }
+    /*==================== header mobile========================*/
+    header .title{
+        position: initial;
+        color:#000;
+    }
+    header .title h1{
+        padding: 20px;
+        max-width: initial;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: left;
+    }
+    /*==================== content========================*/
+    .content p{
+        font-family: Arial;
+        font-size: 14px;
+        line-height: 21px;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 968px;
+    }
  }
+ @keyframes widthSlide {
+  from {
+    width: 0%;
+  }
+}
+ @keyframes heightSlide {  
+  from{
+    height:0%;
+  }
+}
+

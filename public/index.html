@@ -6,12 +6,16 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/fonts.css">
         <link rel="stylesheet" href="styles/main.css">
-        
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
     <body>
         <nav class="navbar">
             <div class="menu-btn icon">
-                <img src="images/menu.png" alt="menu button">
+                <button>
+                    <img src="images/menu.png" alt="menu button">
+                </button>
+                
             </div>
             <div class="logo-endava">
                 <img src="images/endava-logo.png" alt="endava logotype">
@@ -20,7 +24,7 @@
                 <li><a href="">About</a></li>
                 <li><a href="">Projects</a></li>
                 <li class="dropdown">
-                    <a href="" class="dropbtn">Careers<i class="fas fa-angle-down"></i></a>
+                    <a class="dropbtn">Careers<i class="fas fa-angle-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#">Applications Management</a>
                         <a href="#">Development</a>
@@ -31,16 +35,32 @@
                 <li><a href="">Events</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
+            <div class="search-bar">
+                <input type="text" name="search" id="search" placeholder="Enter your search here...">
+            </div>
             <div class="search-btn icon">
-                <img src="images/search.png" alt="search button">
+                <button>
+                    <img src="images/search.png" alt="search button">
+                </button>
             </div>
             <div class="close-menu-btn icon">
-                <img src="images/cross-remove-sign.png" alt="close menu button">
+                <button>
+                    <img src="images/cross-remove-sign.png" alt="close menu button">
+                </button>
             </div>
 
         </nav>
+        <div class="mobile-background-menu">
+
+        </div>
         <header>
-            <h1>Thoughtful, Open, Adaptable, Smart, Trusted.</h1>
+            <div class="background">
+                <img src="images/background-image.jpg" alt="">
+            </div>
+
+            <div class="title">
+                <h1>Thoughtful, Open, Adaptable, Smart, Trusted.</h1>
+            </div>           
         </header>
         <section class="content">
             <p>
@@ -50,5 +70,10 @@
                 duis lectus massa litora nam aliquet quam velit imperdiet venenatis porta diam curae eros.
             </p>
         </section>
+        <footer>
+
+        </footer>
+        <script src="js/main.js"></script>
     </body>
+    
 </html>
