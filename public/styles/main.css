@@ -1,9 +1,6 @@
 body{
     font-family: Oswald, Arial;
 }
-.mobile-background-menu{
-    display: no
-}
 .navbar{
     background-color: #ff3f10;
     display: flex;
@@ -58,15 +55,17 @@ body{
     color:#fff;
 }
 .navbar .search-btn{
-  
+    display: block;
 }
 .navbar .close-menu-btn{
     display: none;
 }
 
 /*==================== menu list ========================*/
-.navbar .menu-bar{
+.navbar nav{
     flex-grow: 3;
+}
+.navbar .menu-bar{
     padding: 0;
     margin: 0;
     display: flex;
@@ -81,7 +80,7 @@ body{
     display: inline-block;
     color: #fff;
     text-align: center;
-    padding: 7px 25px;
+    padding: 6px 25px;
     text-decoration: none;
 }
 .navbar .menu-bar li a:hover{
@@ -96,7 +95,6 @@ body{
     position: absolute;
     background-color: #fff;
     min-width: 230px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 .navbar .menu-bar .dropdown .visible {
@@ -120,37 +118,47 @@ body{
     display: none;
 }
 
-/*==================== header ========================*/
-header{
+/*==================== main ========================*/
+main{
     position: relative;
 }
-header .background{
-
+main .background{
+    display: grid;
     background-color: #000;
 }
-header img {
+main img {
     width: 100%;
     height: auto;
     opacity: 0.5;
+    -moz-opacity: 0.5;
 }
-header .title{
+main .title{
+    width: 100%;
     position: absolute;
     color: #fff;
     margin: 0 auto;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     top: 0;
 }
-header .title h1{
-    max-width: 60%;
+main .title h1{
+    margin: 30px 0;
+    max-width: 600px;
     font-size: 94px;
     line-height: 94px;
     font-weight: 400;
     font-style: italic;
     text-align: center;
 }
+main .title .line{
+    background-color: #ff3f10;
+    width: 80px;
+    height: 8px;
+}
+
 /*==================== content========================*/
 .content p{
     font-family: Arial;
@@ -159,13 +167,17 @@ header .title h1{
     margin: 20px auto;
     max-width: 968px;
 }
+/*==================== legal========================*/
+.legal{
+    display: none;
+}
 /*==================== On mobile========================*/
 @media (max-width: 930px) {
     .mobile-background-menu.visible{
         position: fixed;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.5);
     }
     .navbar{
         position: relative;
@@ -187,6 +199,7 @@ header .title h1{
     }
     .navbar .menu-bar.visible{
         display: flex;
+        height: 100vh;
         animation-duration: 0.5s;
         animation-name: widthSlide;
     }
@@ -200,11 +213,14 @@ header .title h1{
         display: block;
     }
     /*==================== menu mobile ========================*/
-    .navbar .menu-bar{
+    .navbar nav{
         width: 80%;
         position: absolute;
         top: 100%;
         z-index: 2;
+    }
+    .navbar .menu-bar{
+        width: 100%;
         flex-direction: column;
         background-color: #fff;
     }
@@ -214,8 +230,18 @@ header .title h1{
         color: #000;
     }
     .navbar .menu-bar li .dropbtn i{
-        display: inline;
+        display: inline-block;
+        padding: 0 20px;
         color:#ff3f10;
+        transition: transform .8s ease-in-out;
+        -o-transition: -o-transform .8s ease-in-out;
+        -moz-transition: -moz-transform .8s ease-in-out;
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+    }
+    .navbar .menu-bar li .dropbtn .rotate{
+        transform:rotate(180deg);
+        -ms-transform:rotate(180deg);
+        -webkit-transform:rotate(180deg);
     }
     .navbar .menu-bar .dropdown-content {
         display: none;
@@ -241,17 +267,20 @@ header .title h1{
     .navbar .menu-bar.hidden{
         display: none;
     }
-    /*==================== header mobile========================*/
-    header .title{
+    /*==================== main mobile========================*/
+    main .title{
         position: initial;
         color:#000;
     }
-    header .title h1{
+    main .title h1{
         padding: 20px;
         max-width: initial;
         font-size: 32px;
         line-height: 39px;
         text-align: left;
+    }
+    main .title .line{
+        display: none;
     }
     /*==================== content========================*/
     .content p{
@@ -262,15 +291,22 @@ header .title h1{
         padding: 20px;
         max-width: 968px;
     }
- }
- @keyframes widthSlide {
+    /*==================== legal========================*/
+    footer{
+        position: relative;
+    }
+    .legal.visible{        
+        display: initial;
+        padding: 0 20px;
+        position: absolute;
+        z-index: 3;
+        animation-duration: 0.5s;
+        animation-name: widthSlide;
+    }
+}
+@keyframes widthSlide {
   from {
     width: 0%;
-  }
-}
- @keyframes heightSlide {  
-  from{
-    height:0%;
   }
 }
 
